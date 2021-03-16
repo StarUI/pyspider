@@ -9,11 +9,22 @@ h1 {
   margin-top: 5px;
 }
 
+header .alert {
+  position: absolute;;
+  width: 50rem;
+  left: 50%;
+  margin-left: -25rem;
+}
+
 .queue-info {
   th, td {
     text-align: center;
     border: 1px solid #ddd;
   }
+}
+
+[v-cloak] {
+  display: none;
 }
 
 .projects {
@@ -39,7 +50,7 @@ h1 {
     color: white;
   }
   .project-status>span {
-    .project-status-span(lighten(black, 50%));
+    .project-status-span(@gray-light);
   }
   span.status-TODO {
     .project-status-span(@orange);
@@ -55,6 +66,9 @@ h1 {
   }
   span.status-RUNNING {
     .project-status-span(@green);
+  }
+  span.status-PAUSED {
+    .project-status-span(@gray);
   }
 
   .project-rate {
